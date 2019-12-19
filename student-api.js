@@ -3,7 +3,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const port = 4000;
-var path = require('path');
+const path = require('path');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -23,9 +23,19 @@ app.post('/student', (req, res) => {
     console.log(student);
     students.push(student);
 
+    console.log(students)
     res.send(' A student has been added');
 });
 
+app.get('/list', (req, res) => {
+
+    for(let s of students)
+    {
+        console.log(s);
+    }
+    res.json(students);
+
+});
 
 
 
