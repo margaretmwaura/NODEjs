@@ -3,12 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-<!--    <script src="jquery-3.4.1.min.js"></script>-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="result.json"></script>
+    <script type="text/javascript" >
+        function load() {
+            var mydata = JSON.parse(data);
+            console.log(mydata)
+        }
+    </script>
 </head>
-<body>
+<body onload="load()">
 
 <h1> This is the list page </h1>
 <p id="student">Will display the list</p>
+
+
+<table id="booksdata" border="2">
+    <thead>
+    <th>Author</th>
+    <th>Country</th>
+    <th>language</th>
+    <th>title</th>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table>
+
 </body>
 </html>
