@@ -11,7 +11,7 @@
 
     if(document.readyState === 'complete')
     {
-        getdata()
+        getdata();
         console.log("Document has loaded")
      }
       else
@@ -31,14 +31,20 @@
 
       function getdata()
       {
-          $.get('http://localhost:4000/list',{},function(data)
+          $.getJSON('http://localhost:4000/list',{},function(data)
           {
-              console.log(data)
+              for(inst of data)
+              {
+                  console.log(inst);
+                  document.getElementById("student").innerHTML = inst.firstname;
+              }
+
           });
       }
 </script>
 
 
 <h1> This is the list page </h1>
+<p id="student">Will display the list</p>
 </body>
 </html>
