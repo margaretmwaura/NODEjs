@@ -27,7 +27,7 @@ app.post('/student', (req, res) => {
     console.log(student);
     students.push(student);
 
-    console.log(students)
+    console.log(students);
     res.send(' A student has been added');
 });
 
