@@ -11,6 +11,7 @@ app.use(cors());
 
 let students = [];
 
+
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname + '/index.html'));
 });
@@ -24,6 +25,8 @@ app.post('/student', (req, res) => {
 
     res.send(' A student has been added');
 });
+
+
 
 
 app.listen(port, () => console.log('Hello world app listening on port ${port}!'));
