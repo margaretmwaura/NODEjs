@@ -16,6 +16,10 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname + '/index.html'));
 });
 
+app.get('/listfile', (req, res) => {
+    res.sendFile(path.join(__dirname + '/list.html'));
+});
+
 app.post('/student', (req, res) => {
     const student = req.body;
 

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<!--    <script src="jquery-3.4.1.min.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+<script>
+
+    if(document.readyState === 'complete')
+    {
+        getdata()
+        console.log("Document has loaded")
+     }
+      else
+        {
+           if (window.addEventListener)
+            {
+              window.addEventListener('load',getdata , false);
+              console.log("Asking document to load");
+            }
+            else
+                {
+                   window.attachEvent('onload',getdata());
+                   console.log("Waiting for doc to load")
+                    }
+        }
+
+
+      function getdata()
+      {
+          $.get('http://localhost:4000/list',{},function(data)
+          {
+              console.log(data)
+          });
+      }
+</script>
+
+
+<h1> This is the list page </h1>
+</body>
+</html>
